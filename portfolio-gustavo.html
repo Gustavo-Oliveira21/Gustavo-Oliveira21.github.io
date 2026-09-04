@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gustavo Oliveira · Portfólio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background: #14181C;
+    color: #EDEAE3;
+    line-height: 1.6;
+  }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
+  a { color: inherit; }
+  section { max-width: 760px; margin: 0 auto; padding: 60px 24px; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 10; background: rgba(20,24,28,0.92); backdrop-filter: blur(6px);
+    border-bottom: 1px solid #232A31;
+  }
+  .nav-inner { max-width: 760px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
+  .nav-brand { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; text-decoration: none; }
+  .nav-links { display: flex; gap: 26px; }
+  .nav-links a { font-size: 13.5px; color: #B7BCC2; text-decoration: none; }
+  .nav-links a:hover { color: #EDEAE3; }
+
+  /* HERO */
+  .hero { padding-top: 72px; padding-bottom: 64px; }
+  .hero .tag { color: #F2A93B; font-size: 13.5px; font-weight: 500; margin-bottom: 18px; }
+  .hero h1 { font-size: 40px; line-height: 1.15; margin-bottom: 14px; }
+  .hero .role { font-size: 17px; color: #B7BCC2; margin-bottom: 18px; }
+  .hero p { font-size: 15.5px; color: #9AA1A8; max-width: 560px; margin-bottom: 32px; }
+  .hero .links { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; padding: 11px 20px; border-radius: 6px;
+    font-size: 14px; font-weight: 500; text-decoration: none; border: 1px solid #2C333A;
+  }
+  .btn.primary { background: #F2A93B; color: #14181C; border-color: #F2A93B; }
+  .btn.ghost { color: #EDEAE3; }
+
+  /* SECTION HEADERS */
+  .sec-title { font-size: 22px; margin-bottom: 28px; padding-bottom: 14px; border-bottom: 1px solid #232A31; }
+
+  /* SOBRE */
+  #sobre p { color: #C7CBD0; font-size: 15.5px; max-width: 620px; }
+
+  /* HABILIDADES */
+  .skills-group { margin-bottom: 20px; }
+  .skills-group:last-child { margin-bottom: 0; }
+  .skills-group-label { font-size: 12.5px; color: #8B93A0; margin-bottom: 10px; }
+  .skills-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-tag {
+    font-size: 13px; color: #DCE0E4; background: #1D2329; border: 1px solid #2C333A;
+    padding: 6px 13px; border-radius: 6px;
+  }
+
+  /* EXPERIÊNCIA - timeline */
+  .timeline { position: relative; padding-left: 28px; border-left: 1px solid #2C333A; }
+  .tl-item { position: relative; margin-bottom: 32px; }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-item::before {
+    content: ''; position: absolute; left: -33px; top: 4px; width: 9px; height: 9px;
+    border-radius: 50%; background: #F2A93B; border: 2px solid #14181C;
+  }
+  .tl-period { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8B93A0; margin-bottom: 4px; }
+  .tl-role { font-size: 16px; font-weight: 600; margin-bottom: 2px; }
+  .tl-org { font-size: 13.5px; color: #8B93A0; margin-bottom: 8px; }
+  .tl-desc { font-size: 14.5px; color: #C7CBD0; max-width: 580px; }
+
+  /* PROJETOS */
+  .proj-card {
+    background: #1D2329; border-radius: 10px; padding: 26px; border-left: 3px solid #3E8E93;
+  }
+  .proj-card h3 { font-size: 18px; margin-bottom: 10px; }
+  .proj-card p { font-size: 14.5px; color: #C7CBD0; margin-bottom: 16px; max-width: 560px; }
+  .proj-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+  .proj-tag {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #8B93A0;
+    border: 1px solid #2C333A; padding: 4px 10px; border-radius: 20px;
+  }
+  .proj-link { font-size: 13.5px; color: #F2A93B; text-decoration: none; font-weight: 500; }
+
+  /* CERTIFICAÇÕES */
+  .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .cert-item { background: #1D2329; border-radius: 10px; padding: 18px; }
+  .cert-item .cert-name { font-size: 14.5px; font-weight: 600; margin-bottom: 4px; }
+  .cert-item .cert-issuer { font-size: 12.5px; color: #8B93A0; }
+  .badge { padding: 3px 9px; border-radius: 20px; font-size: 10.5px; font-weight: 500; background: #F2A93B22; color: #F2A93B; }
+
+  /* CONTATO */
+  #contato { text-align: left; padding-bottom: 88px; }
+  .contact-links { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
+  .contact-links a { font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; width: fit-content; }
+  .contact-links a:hover { color: #F2A93B; }
+
+  footer { text-align: center; padding: 28px 24px; color: #5C636B; font-size: 12.5px; border-top: 1px solid #1D2329; }
+
+  @media (max-width: 560px) {
+    .nav-links { gap: 16px; }
+    .hero h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="#">Gustavo Oliveira</a>
+    <div class="nav-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="tag">Aberto a oportunidades em TI</div>
+  <h1>Gustavo Oliveira</h1>
+  <div class="role">Estudante de Ciência da Computação · Dados, Desenvolvimento &amp; BI</div>
+  <p>Experiência prática em operações e administração de sistemas, com interesse em desenvolvimento de software, análise de dados, business intelligence e sistemas ERP.</p>
+  <div class="links">
+    <a class="btn primary" href="https://www.linkedin.com/in/gustavo-oliveira-259453298/" target="_blank">Ver LinkedIn</a>
+    <a class="btn ghost" href="mailto:gustavo.oliveira2952@gmail.com">Enviar e-mail</a>
+  </div>
+</section>
+
+<section id="sobre">
+  <h2 class="sec-title">Sobre</h2>
+  <p>Curso Ciência da Computação na Universidade São Judas Tadeu (jan/2023 – dez/2026). Atualmente trabalho como Auxiliar de Transporte em uma construtora, dando suporte administrativo e operacional à gestão de frota e logística de um consórcio de saneamento. Já estagiei em Análise e Desenvolvimento, atuando com automação de processos (PowerApps, Power Automate, SharePoint), e tenho interesse particular em sistemas ERP como TOTVS, SAP e Oracle.</p>
+</section>
+
+<section id="habilidades">
+  <h2 class="sec-title">Habilidades técnicas</h2>
+  <div class="skills-group">
+    <div class="skills-group-label">Dados &amp; Banco de dados</div>
+    <div class="skills-tags">
+      <span class="skill-tag">SQL</span>
+      <span class="skill-tag">Oracle PL/SQL</span>
+      <span class="skill-tag">Modelagem relacional</span>
+      <span class="skill-tag">Power BI</span>
+      <span class="skill-tag">Excel avançado</span>
+    </div>
+  </div>
+  <div class="skills-group">
+    <div class="skills-group-label">Automação &amp; Desenvolvimento</div>
+    <div class="skills-tags">
+      <span class="skill-tag">PowerApps</span>
+      <span class="skill-tag">Power Automate</span>
+      <span class="skill-tag">SharePoint</span>
+      <span class="skill-tag">React</span>
+    </div>
+  </div>
+  <div class="skills-group">
+    <div class="skills-group-label">Cloud &amp; Sistemas</div>
+    <div class="skills-tags">
+      <span class="skill-tag">AWS Cloud Practitioner</span>
+      <span class="skill-tag">Sistemas ERP (TOTVS, SAP, Oracle)</span>
+    </div>
+  </div>
+</section>
+
+<section id="experiencia">
+  <h2 class="sec-title">Experiência</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-period">SET 2025 — ATUAL</div>
+      <div class="tl-role">Auxiliar de Transporte</div>
+      <div class="tl-org">Castilho Construtora</div>
+      <div class="tl-desc">Gestão de frota de 60 veículos, controle de acesso, gestão de multas e agendamento de manutenções. Suporte às rotinas operacionais dos 4 pacotes do Consórcio Saneamento, incluindo acompanhamento de sinistros da ocorrência ao retorno à operação.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-period">OUT 2024 — SET 2025</div>
+      <div class="tl-role">Estágio em Análise e Desenvolvimento</div>
+      <div class="tl-org">Grupo More IT</div>
+      <div class="tl-desc">Atuação com automação de processos utilizando PowerApps, Power Automate e SharePoint.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-period">EXPERIÊNCIA ANTERIOR</div>
+      <div class="tl-role">Funções administrativas e financeiras</div>
+      <div class="tl-org">Construtora Augusto Velloso</div>
+      <div class="tl-desc">Atuação em rotinas administrativas e financeiras.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-period">EXPERIÊNCIA ANTERIOR</div>
+      <div class="tl-role">Auditor</div>
+      <div class="tl-org">Shopping Metrô Tucuruvi</div>
+      <div class="tl-desc">Atuação como auditor.</div>
+    </div>
+  </div>
+</section>
+
+<section id="projetos">
+  <h2 class="sec-title">Projetos</h2>
+  <div class="proj-card">
+    <h3>SGF — Sistema de Gestão de Frotas</h3>
+    <p>Projeto de banco de dados e dashboard inspirado na rotina real de gestão de frota: modelagem relacional (SQL) para veículos, manutenções, abastecimentos, pedágios, multas e sinistros, com um painel visual para acompanhar os principais indicadores.</p>
+    <div class="proj-tags">
+      <span class="proj-tag">SQL</span>
+      <span class="proj-tag">MySQL/PostgreSQL</span>
+      <span class="proj-tag">React</span>
+      <span class="proj-tag">Modelagem de Dados</span>
+    </div>
+    <a class="proj-link" href="https://github.com/Gustavo-Oliveira21/Sistema-Gest-o-de-Frotas" target="_blank">Ver repositório no GitHub →</a>
+  </div>
+
+  <div class="proj-card" style="border-left-color:#6FA97C; margin-top: 18px;">
+    <h3>ControleFin — Controladoria Financeira para Pequenas Empresas</h3>
+    <p>Sistema de banco de dados e dashboard para controle financeiro simples: entradas e saídas, emissão de notas fiscais e fluxo de caixa mensal, com visão consolidada de saldo e categorias de gasto.</p>
+    <div class="proj-tags">
+      <span class="proj-tag">SQL</span>
+      <span class="proj-tag">Modelagem de Dados</span>
+      <span class="proj-tag">Dashboard / BI</span>
+    </div>
+    <a class="proj-link" href="https://github.com/Gustavo-Oliveira21/ControleFin" target="_blank">Ver repositório no GitHub →</a>
+  </div>
+</section>
+
+<section id="certificacoes">
+  <h2 class="sec-title">Formação complementar</h2>
+  <div class="cert-grid">
+    <div class="cert-item">
+      <div class="cert-name">AWS Cloud Practitioner</div>
+      <div class="cert-issuer">Amazon Web Services</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-name">Oracle PL/SQL</div>
+      <div class="cert-issuer">Oracle</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-name">Fundamentos da Gestão de Projetos</div>
+      <div class="cert-issuer"></div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-name">Power BI <span class="badge">em andamento</span></div>
+      <div class="cert-issuer"></div>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <h2 class="sec-title">Contato</h2>
+  <p style="color:#C7CBD0; font-size: 15px; max-width: 500px;">Aberto a conversas sobre oportunidades em TI, projetos ou colaborações. Fico à disposição pelos canais abaixo.</p>
+  <div class="contact-links">
+    <a href="mailto:gustavo.oliveira2952@gmail.com">✉ gustavo.oliveira2952@gmail.com</a>
+    <a href="https://www.linkedin.com/in/gustavo-oliveira-259453298/" target="_blank">in linkedin.com/in/gustavo-oliveira-259453298</a>
+  </div>
+</section>
+
+<footer>Gustavo Oliveira · Portfólio pessoal</footer>
+
+</body>
+</html>
