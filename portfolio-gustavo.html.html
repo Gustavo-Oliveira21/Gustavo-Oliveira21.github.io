@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gustavo Oliveira · Portfólio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background: #14181C;
+    color: #EDEAE3;
+    line-height: 1.6;
+  }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
+  a { color: inherit; }
+  section { max-width: 760px; margin: 0 auto; padding: 64px 24px; }
+
+  /* HERO */
+  .hero { padding-top: 96px; padding-bottom: 72px; }
+  .hero .tag { color: #F2A93B; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: .3px; margin-bottom: 18px; }
+  .hero h1 { font-size: 42px; line-height: 1.15; margin-bottom: 16px; }
+  .hero p { font-size: 17px; color: #B7BCC2; max-width: 540px; margin-bottom: 32px; }
+  .hero .links { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; padding: 11px 20px; border-radius: 6px;
+    font-size: 14px; font-weight: 500; text-decoration: none; border: 1px solid #2C333A;
+  }
+  .btn.primary { background: #F2A93B; color: #14181C; border-color: #F2A93B; }
+  .btn.ghost { color: #EDEAE3; }
+
+  /* SECTION HEADERS */
+  .sec-label { font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #F2A93B; margin-bottom: 8px; }
+  .sec-title { font-size: 24px; margin-bottom: 28px; }
+
+  /* SOBRE */
+  #sobre p { color: #C7CBD0; font-size: 15.5px; max-width: 620px; }
+
+  /* EXPERIÊNCIA - timeline */
+  .timeline { position: relative; padding-left: 28px; border-left: 1px solid #2C333A; }
+  .tl-item { position: relative; margin-bottom: 32px; }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-item::before {
+    content: ''; position: absolute; left: -33px; top: 4px; width: 9px; height: 9px;
+    border-radius: 50%; background: #F2A93B; border: 2px solid #14181C;
+  }
+  .tl-period { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8B93A0; margin-bottom: 4px; }
+  .tl-role { font-size: 16px; font-weight: 600; margin-bottom: 2px; }
+  .tl-org { font-size: 13.5px; color: #8B93A0; margin-bottom: 8px; }
+  .tl-desc { font-size: 14.5px; color: #C7CBD0; max-width: 580px; }
+
+  /* PROJETOS */
+  .proj-card {
+    background: #1D2329; border-radius: 10px; padding: 26px; border-left: 3px solid #3E8E93;
+  }
+  .proj-card h3 { font-size: 18px; margin-bottom: 10px; }
+  .proj-card p { font-size: 14.5px; color: #C7CBD0; margin-bottom: 16px; max-width: 560px; }
+  .proj-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+  .proj-tag {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #8B93A0;
+    border: 1px solid #2C333A; padding: 4px 10px; border-radius: 20px;
+  }
+  .proj-link { font-size: 13.5px; color: #F2A93B; text-decoration: none; font-weight: 500; }
+
+  /* CERTIFICAÇÕES */
+  .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .cert-item { background: #1D2329; border-radius: 10px; padding: 18px; }
+  .cert-item .cert-name { font-size: 14.5px; font-weight: 600; margin-bottom: 4px; }
+  .cert-item .cert-issuer { font-size: 12.5px; color: #8B93A0; }
+
+  /* CONTATO */
+  #contato { text-align: left; padding-bottom: 96px; }
+  .contact-links { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
+  .contact-links a { font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; width: fit-content; }
+  .contact-links a:hover { color: #F2A93B; }
+
+  footer { text-align: center; padding: 32px 24px; color: #5C636B; font-size: 12.5px; border-top: 1px solid #1D2329; }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="tag">ABERTO A OPORTUNIDADES EM TI</div>
+  <h1>Gustavo Oliveira</h1>
+  <p>Estudante de Ciência da Computação, com experiência prática em operações e interesse em desenvolvimento, dados, BI e sistemas ERP. Aberto a oportunidades em diferentes áreas de TI.</p>
+  <div class="links">
+    <a class="btn primary" href="https://www.linkedin.com/in/gustavo-oliveira-259453298/" target="_blank">LinkedIn</a>
+    <a class="btn ghost" href="mailto:gustavo.oliveira2952@gmail.com">gustavo.oliveira2952@gmail.com</a>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="sec-label">01 · SOBRE</div>
+  <h2 class="sec-title">Quem sou</h2>
+  <p>Curso Ciência da Computação na Universidade São Judas Tadeu (jan/2023 – dez/2026). Atualmente trabalho como Auxiliar de Transporte em uma construtora, dando suporte administrativo e operacional à gestão de frota e logística de um consórcio de saneamento. Já estagiei em Análise e Desenvolvimento, trabalhando com automação de processos (PowerApps, Power Automate, SharePoint), e tenho interesse particular em sistemas ERP como TOTVS, SAP e Oracle.</p>
+</section>
+
+<section id="experiencia">
+  <div class="sec-label">02 · EXPERIÊNCIA</div>
+  <h2 class="sec-title">Trajetória</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-period">SET 2025 — ATUAL</div>
+      <div class="tl-role">Auxiliar de Transporte</div>
+      <div class="tl-org">Castilho Construtora</div>
+      <div class="tl-desc">Gestão de frota de 60 veículos, controle de acesso, gestão de multas e agendamento de manutenções. Suporte às rotinas operacionais dos 4 pacotes do Consórcio Saneamento, incluindo acompanhamento de sinistros da ocorrência ao retorno à operação.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-period">OUT 2024 — SET 2025</div>
+      <div class="tl-role">Estágio em Análise e Desenvolvimento</div>
+      <div class="tl-org">Grupo More IT</div>
+      <div class="tl-desc">Atuação com automação de processos utilizando PowerApps, Power Automate e SharePoint.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-period">EXPERIÊNCIA ANTERIOR</div>
+      <div class="tl-role">Funções administrativas e financeiras</div>
+      <div class="tl-org">Construtora Augusto Velloso</div>
+      <div class="tl-desc">Atuação em rotinas administrativas e financeiras.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-period">EXPERIÊNCIA ANTERIOR</div>
+      <div class="tl-role">Auditor</div>
+      <div class="tl-org">Shopping Metrô Tucuruvi</div>
+      <div class="tl-desc">Atuação como auditor.</div>
+    </div>
+  </div>
+</section>
+
+<section id="projetos">
+  <div class="sec-label">03 · PROJETOS</div>
+  <h2 class="sec-title">O que venho construindo</h2>
+  <div class="proj-card">
+    <h3>SGF — Sistema de Gestão de Frotas</h3>
+    <p>Projeto de banco de dados e dashboard inspirado na minha rotina real de gestão de frota: modelagem relacional (SQL) para veículos, manutenções, abastecimentos, pedágios, multas e sinistros, com um painel visual para acompanhar os principais indicadores.</p>
+    <div class="proj-tags">
+      <span class="proj-tag">SQL</span>
+      <span class="proj-tag">MySQL/PostgreSQL</span>
+      <span class="proj-tag">React</span>
+      <span class="proj-tag">Modelagem de Dados</span>
+    </div>
+    <a class="proj-link" href="#" target="_blank">Ver repositório no GitHub →</a>
+  </div>
+
+  <div class="proj-card" style="border-left-color:#6FA97C; margin-top: 18px;">
+    <h3>ControleFin — Controladoria Financeira para Pequenas Empresas</h3>
+    <p>Sistema de banco de dados e dashboard para controle financeiro simples: entradas e saídas, emissão de notas fiscais e fluxo de caixa mensal, com visão consolidada de saldo e categorias de gasto.</p>
+    <div class="proj-tags">
+      <span class="proj-tag">SQL</span>
+      <span class="proj-tag">Modelagem de Dados</span>
+      <span class="proj-tag">Dashboard / BI</span>
+    </div>
+    <a class="proj-link" href="#" target="_blank">Ver repositório no GitHub →</a>
+  </div>
+</section>
+
+<section id="certificacoes">
+  <div class="sec-label">04 · CERTIFICAÇÕES</div>
+  <h2 class="sec-title">Formação complementar</h2>
+  <div class="cert-grid">
+    <div class="cert-item">
+      <div class="cert-name">AWS Cloud Practitioner</div>
+      <div class="cert-issuer">Amazon Web Services</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-name">Oracle PL/SQL</div>
+      <div class="cert-issuer">Oracle</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-name">Fundamentos da Gestão de Projetos</div>
+      <div class="cert-issuer"></div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-name">Power BI <span class="badge" style="margin-left:6px;">em andamento</span></div>
+      <div class="cert-issuer"></div>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="sec-label">05 · CONTATO</div>
+  <h2 class="sec-title">Vamos conversar</h2>
+  <p style="color:#C7CBD0; font-size: 15px; max-width: 500px;">Estou em busca do meu primeiro estágio em TI e aberto a conversas sobre oportunidades, projetos ou trocas de ideias.</p>
+  <div class="contact-links">
+    <a href="mailto:gustavo.oliveira2952@gmail.com">✉ gustavo.oliveira2952@gmail.com</a>
+    <a href="https://www.linkedin.com/in/gustavo-oliveira-259453298/" target="_blank">in linkedin.com/in/gustavo-oliveira-259453298</a>
+  </div>
+</section>
+
+<footer>Gustavo Oliveira · Portfólio pessoal</footer>
+
+</body>
+</html>
